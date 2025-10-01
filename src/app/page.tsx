@@ -79,8 +79,8 @@ export default function Home() {
           </h1>
           <div className="h-[672px] w-full relative rounded-[22px] overflow-hidden">
             <Image 
-              alt="Latest computing technology showcase" 
-              src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80"
+              alt="Latest computing technology showcase with gaming setup" 
+              src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80"
               fill
               className="object-cover rounded-[22px]"
               priority
@@ -233,6 +233,220 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-px">
             <div className="w-full h-full bg-gradient-to-r from-transparent via-[#495f6e] to-transparent"></div>
         </div>
+        </section>
+
+        {/* Product Grid Section */}
+        <section className="bg-[#ecf6fe] flex flex-col pb-[52px] pt-0 relative">
+          {/* Filters */}
+          <div className="flex flex-col gap-[32px] items-start justify-center px-0 py-[32px]">
+            <div className="flex items-center justify-between w-full">
+              <div className="flex gap-[14px] items-start">
+                <button className="bg-[#ecf6fe] border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
+                  <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Category</span>
+                  <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <button className="bg-[#ecf6fe] border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
+                  <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Price</span>
+                  <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <button className="bg-[#ecf6fe] border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
+                  <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Brand</span>
+                  <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
+              <p className="text-[15px] font-normal text-[#164364] font-['Familjen_Grotesk',_sans-serif] text-right">
+                100+
+              </p>
+            </div>
+          </div>
+
+          {/* Product Grid */}
+          <div className="flex flex-col gap-[52px] items-start relative w-full">
+            {/* Row 1 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px] w-full">
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="High-Performance CPU" 
+                    src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">High-Performance CPU</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$299</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="Graphics Card" 
+                    src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">Graphics Card</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$499</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="SSD Drive" 
+                    src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">SSD Drive</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$129</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px] w-full">
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="RAM Module" 
+                    src="https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">RAM Module</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$89</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="Motherboard" 
+                    src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">Motherboard</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$199</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="Cooling Fan" 
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">Smartwatch</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$199</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 3 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px] w-full">
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="Power Supply Unit" 
+                    src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">Power Supply Unit</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$99</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="Monitor" 
+                    src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">Monitor</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$179</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[14px]">
+                <div className="h-[432px] w-full relative rounded-[22px] overflow-hidden">
+                  <Image 
+                    alt="Keyboard" 
+                    src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    fill
+                    className="object-cover rounded-[22px]"
+                  />
+                  <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
+                </div>
+                <div className="flex flex-col text-[#164364] text-[15px] leading-[20px]">
+                  <h3 className="font-semibold font-['Familjen_Grotesk',_sans-serif] truncate">Keyboard</h3>
+                  <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$49</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pagination */}
+          <div className="flex items-start justify-end pt-[68px] w-full">
+            <div className="flex items-center gap-2">
+              <button className="bg-[#0d99ff] rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center">
+                <span className="text-[15px] font-bold text-[#000305] font-['Space_Mono',_sans-serif]">1</span>
+              </button>
+              <button className="rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">2</span>
+              </button>
+              <button className="rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">3</span>
+              </button>
+              <button className="rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">4</span>
+              </button>
+              <button className="rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">5</span>
+              </button>
+              <button className="bg-[#ecf6fe] rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+                <svg className="w-5 h-5 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </section>
 
       </main>
