@@ -1,0 +1,169 @@
+---
+alwaysApply: true
+---
+
+# Next.js + TypeScript + TailwindCSS + ShadCN/UI Project Rules
+
+## Project Overview
+This is a Next.js project using:
+- Next.js 15+ with App Router
+- TypeScript for type safety
+- TailwindCSS for styling
+- ShadCN/UI for component library
+- Figma MCP integration
+
+## Code Style & Best Practices
+
+### TypeScript
+- Always use TypeScript with strict type checking
+- Define proper interfaces and types for all props and data structures
+- Use type inference where appropriate, explicit types where necessary
+- Prefer `interface` over `type` for object shapes
+- Use proper generic types for reusable components
+
+### Next.js App Router
+- Use App Router structure with `src/app/` directory
+- Implement proper page.tsx and layout.tsx files
+- Use Server Components by default, Client Components only when needed
+- Add `"use client"` directive only when necessary (state, event handlers, browser APIs)
+- Use proper metadata API for SEO
+- Implement proper loading.tsx and error.tsx files
+
+### TailwindCSS
+- Use Tailwind utility classes for styling
+- Follow mobile-first responsive design approach
+- Use consistent spacing scale (4, 8, 12, 16, 24, 32, etc.)
+- Prefer Tailwind classes over custom CSS
+- Use CSS variables for theming when needed
+- Group related classes logically (layout, spacing, colors, etc.)
+
+### Styling Guidelines
+- **Component Styles**: Use Tailwind classes directly in components
+- **Global Styles**: Add custom styles in `src/app/globals.css` only
+- **Asset Organization**: 
+  - Static assets (images, fonts) in `public/assets/`
+  - Dynamic assets (processed images, icons) in `src/assets/`
+  - Custom CSS files in `src/assets/styles/`
+- **CSS Architecture**: 
+  - Base styles in `globals.css`
+  - Component-specific overrides in `globals.css` with clear comments
+  - Avoid inline styles, use Tailwind classes
+  - Use CSS custom properties for theming
+
+### ShadCN/UI
+- Use ShadCN/UI components as the primary component library
+- Install new components with `npx shadcn@latest add [component-name]`
+- Customize components through CSS variables and Tailwind classes
+- Follow ShadCN/UI design patterns and conventions
+- Use proper component composition
+
+### File Structure
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   ├── styles/
+│   └── data/
+├── components/
+│   ├── ui/ (ShadCN components)
+│   └── custom/
+├── lib/
+│   └── utils.ts
+└── types/
+    └── index.ts
+public/
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   ├── fonts/
+│   └── documents/
+└── favicon.ico
+```
+
+### Component Guidelines
+- Create reusable components in `src/components/`
+- Use proper prop interfaces with TypeScript
+- Implement proper error boundaries
+- Use React.memo() for performance optimization when needed
+- Follow single responsibility principle
+- Use descriptive component and prop names
+
+### Performance
+- Optimize images with Next.js Image component
+- Use dynamic imports for code splitting
+- Implement proper loading states
+- Use React.Suspense for async components
+- Minimize bundle size with proper imports
+
+### Accessibility
+- Use semantic HTML elements
+- Implement proper ARIA attributes
+- Ensure keyboard navigation works
+- Use proper color contrast ratios
+- Test with screen readers
+
+### Figma Integration
+- Use Figma MCP tools for design-to-code workflow
+- Extract design tokens and convert to Tailwind classes
+- Maintain design system consistency
+- Use Figma components as reference for ShadCN/UI customization
+
+## Code Examples
+
+### Component Structure
+```typescript
+interface ComponentProps {
+  title: string;
+  description?: string;
+  children?: React.ReactNode;
+}
+
+export function Component({ title, description, children }: ComponentProps) {
+  return (
+    <div className="flex flex-col space-y-4 p-6">
+      <h2 className="text-2xl font-bold">{title}</h2>
+      {description && (
+        <p className="text-muted-foreground">{description}</p>
+      )}
+      {children}
+    </div>
+  );
+}
+```
+
+### Page Structure
+```typescript
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page Title',
+  description: 'Page description',
+};
+
+export default function Page() {
+  return (
+    <main className="container mx-auto px-4 py-8">
+      {/* Page content */}
+    </main>
+  );
+}
+```
+
+## Commands
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npx shadcn@latest add [component]` - Add ShadCN component
+- `npm run lint` - Run ESLint
+
+## Notes
+- Always test components in different screen sizes
+- Use TypeScript strict mode
+- Follow Next.js 15+ best practices
+- Maintain consistent code formatting
+- Write self-documenting code with clear variable names
