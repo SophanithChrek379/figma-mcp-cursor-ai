@@ -1,65 +1,104 @@
 import Image from "next/image";
 
+// Banner component based on Figma design
+function PromoBanner() {
+  const imgCloseButton = "http://localhost:3845/assets/a99194df1bf9a5f874bfe6d3c2dbdedbcb1235eb.svg";
+
+  return (
+    <div className="box-border content-stretch flex gap-[6px] items-center px-4 py-[10px] relative size-full sticky top-0 z-50" data-name="Promo Banner" data-node-id="129:548">
+      <div className="absolute bg-[#0d99ff] bottom-0 left-[-52px] right-[-52px] top-0" data-name="Background" data-node-id="129:549" />
+      <p className="font-['Familjen_Grotesk:SemiBold',_sans-serif] font-semibold leading-[16px] relative shrink-0 text-[#000305] text-[13px] text-nowrap whitespace-pre" data-node-id="129:550">
+        Summer Sale - Up to 50% off!
+      </p>
+      <p className="basis-0 font-['Familjen_Grotesk:Regular',_sans-serif] font-normal grow leading-[16px] min-h-px min-w-px relative shrink-0 text-[#000305] text-[13px]" data-node-id="129:551">
+        Use code SAVE10
+      </p>
+      <div className="relative shrink-0 size-[24px]" data-name="Close Button" data-node-id="129:552">
+        <Image alt="Close button" className="block max-w-none size-full" src={imgCloseButton} width={24} height={24} />
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br overflow-hidden from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      {/* Promo Banner */}
+      <PromoBanner />
+      
       {/* Header */}
-      <header className="border-b bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-5">
+      <header className="border-b border-[#164364]">
+        <div className="container mx-auto px-4 py-3 md:py-5">
           <div className="flex items-center justify-between relative">
             {/* Logo */}
             <div className="flex items-center">
-              <h1 className="text-[28px] font-extrabold text-[#164364] lowercase font-['Syne',_sans-serif]">
+              <h1 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-[#164364] lowercase font-['Syne',_sans-serif]">
                 TechStore
               </h1>
             </div>
 
-            {/* Navigation Links - Centered */}
-            <nav className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-10">
+            {/* Mobile Hamburger Menu */}
+            <button className="md:hidden w-8 h-8 text-[#164364] hover:text-blue-600 transition-colors">
+              <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+
+            {/* Navigation Links - Desktop Only */}
+            <nav className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 lg:space-x-10">
               <button className="flex items-center space-x-1.5 group">
-                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Home</span>
-                <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-sm lg:text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Home</span>
+                <svg className="w-3 h-3 lg:w-4 lg:h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <button className="flex items-center space-x-1.5 group">
-                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Products</span>
-                <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-sm lg:text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Products</span>
+                <svg className="w-3 h-3 lg:w-4 lg:h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <button className="flex items-center space-x-1.5 group">
-                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Deals</span>
-                <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-sm lg:text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Deals</span>
+                <svg className="w-3 h-3 lg:w-4 lg:h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <button className="flex items-center space-x-1.5 group">
-                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Support</span>
-                <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-sm lg:text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Support</span>
+                <svg className="w-3 h-3 lg:w-4 lg:h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <button className="flex items-center space-x-1.5 group">
-                <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Contact</span>
-                <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-sm lg:text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Contact</span>
+                <svg className="w-3 h-3 lg:w-4 lg:h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-                </button>
+              </button>
             </nav>
 
-            {/* Action Icons */}
-            <div className="flex items-center space-x-8">
-              <button className="w-6 h-6 text-[#164364] hover:text-blue-600 transition-colors">
+            {/* Action Icons - Responsive */}
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+              <button className="w-5 h-5 lg:w-6 lg:h-6 text-[#164364] hover:text-blue-600 transition-colors">
                 <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </button>
-              <button className="w-6 h-6 text-[#164364] hover:text-blue-600 transition-colors">
+              <button className="w-5 h-5 lg:w-6 lg:h-6 text-[#164364] hover:text-blue-600 transition-colors">
                 <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </button>
+              <button className="w-5 h-5 lg:w-6 lg:h-6 text-[#164364] hover:text-blue-600 transition-colors">
+                <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Mobile Action Icons - Only Cart */}
+            <div className="md:hidden flex items-center">
               <button className="w-6 h-6 text-[#164364] hover:text-blue-600 transition-colors">
                 <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
@@ -72,12 +111,12 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4">
-      {/* Hero Section */}
-        <section className="bg-[#ecf6fe] flex flex-col gap-[52px] items-center py-[96px] rounded-[22px] mt-8">
-          <h1 className="font-bold text-[#164364] text-[120px] text-center tracking-[-2.4px] w-full leading-[120px] font-['Plus_Jakarta_Sans',_sans-serif]">
+        {/* Hero Section */}
+        <section className="flex flex-col gap-8 md:gap-[52px] items-center py-12 md:py-[96px] mt-8">
+          <h1 className="font-bold text-[#164364] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[120px] text-center tracking-[-0.5px] sm:tracking-[-1px] md:tracking-[-1.5px] lg:tracking-[-2px] xl:tracking-[-2.4px] w-full leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-[120px] font-['Plus_Jakarta_Sans',_sans-serif] px-4">
             Discover the Latest in Computing Technology
           </h1>
-          <div className="h-[672px] w-full relative rounded-[22px] overflow-hidden">
+          <div className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[672px] w-full relative overflow-hidden rounded-[22px] border border-[#495f6e]">
             <Image 
               alt="Latest computing technology showcase with gaming setup" 
               src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80"
@@ -85,12 +124,11 @@ export default function Home() {
               className="object-cover rounded-[22px]"
               priority
             />
-            <div className="absolute inset-0 border border-[#495f6e] rounded-[22px] pointer-events-none"></div>
           </div>
         </section>
 
         {/* Product Carousel Section */}
-        <section className="bg-[#ecf6fe] flex flex-col gap-[32px] py-[52px] rounded-[22px] mt-8 relative overflow-hidden">
+        <section className="flex flex-col gap-[32px] py-[52px] mt-8 relative overflow-hidden">
           {/* Product Cards Container */}
           <div className="flex gap-[32px] overflow-x-auto scrollbar-hide px-4">
             {/* Product Card 1 - Gaming Laptop */}
@@ -109,8 +147,14 @@ export default function Home() {
                 <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$1,299</p>
               </div>
               <div className="flex gap-[14px] items-center h-[32px]">
-                <div className="w-[32px] h-[24px] bg-red-500 rounded-sm"></div>
-                <div className="w-[32px] h-[24px] bg-blue-500 rounded-sm"></div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <div className="absolute bottom-[-12.5%] left-0 right-0 top-[-12.5%]">
+                    <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/f4c56dcd721615763682c9c10c669fbf6a5204a7.svg" width={32} height={24} />
+                  </div>
+                </div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/d40e5ac488ce7b2404fc4e3269b2b093351e3ee1.svg" width={32} height={24} />
+                </div>
               </div>
             </div>
 
@@ -130,8 +174,14 @@ export default function Home() {
                 <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$999</p>
               </div>
               <div className="flex gap-[14px] items-center h-[32px]">
-                <div className="w-[32px] h-[24px] bg-slate-500 rounded-sm"></div>
-                <div className="w-[32px] h-[24px] bg-gray-500 rounded-sm"></div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <div className="absolute bottom-[-12.5%] left-0 right-0 top-[-12.5%]">
+                    <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/d9b4b9dbaa439b34da162e6d3601904013c7ff6c.svg" width={32} height={24} />
+                  </div>
+                </div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/7181ab2d81d3285e244abee8fdf87343f224c45f.svg" width={32} height={24} />
+                </div>
               </div>
             </div>
 
@@ -151,8 +201,14 @@ export default function Home() {
                 <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$799</p>
               </div>
               <div className="flex gap-[14px] items-center h-[32px]">
-                <div className="w-[32px] h-[24px] bg-black rounded-sm"></div>
-                <div className="w-[32px] h-[24px] bg-white border border-gray-300 rounded-sm"></div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <div className="absolute bottom-[-12.5%] left-0 right-0 top-[-12.5%]">
+                    <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/16c2cd8e6fc25741f761992341e4cc081579d24f.svg" width={32} height={24} />
+                  </div>
+                </div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/04fb35a29438ad73187923cfa6e535bbf4b160ef.svg" width={32} height={24} />
+                </div>
               </div>
             </div>
 
@@ -172,8 +228,14 @@ export default function Home() {
                 <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$499</p>
               </div>
               <div className="flex gap-[14px] items-center h-[32px]">
-                <div className="w-[32px] h-[24px] bg-slate-400 rounded-sm"></div>
-                <div className="w-[32px] h-[24px] bg-rose-400 rounded-sm"></div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <div className="absolute bottom-[-12.5%] left-0 right-0 top-[-12.5%]">
+                    <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/7f4c05d798c4e4f433234678fc74b6a657ba5b07.svg" width={32} height={24} />
+                  </div>
+                </div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/9c12aebf1caad966df25fe051241ae04ae331592.svg" width={32} height={24} />
+                </div>
               </div>
             </div>
 
@@ -193,8 +255,14 @@ export default function Home() {
                 <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$699</p>
               </div>
               <div className="flex gap-[14px] items-center h-[32px]">
-                <div className="w-[32px] h-[24px] bg-indigo-500 rounded-sm"></div>
-                <div className="w-[32px] h-[24px] bg-purple-500 rounded-sm"></div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <div className="absolute bottom-[-12.5%] left-0 right-0 top-[-12.5%]">
+                    <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/e2fac87601f7180ac425cab0246630725d75f5b6.svg" width={32} height={24} />
+                  </div>
+                </div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/a1c6760c8fc9b6cab60675ae7c66604027695ecb.svg" width={32} height={24} />
+                </div>
               </div>
             </div>
 
@@ -214,15 +282,21 @@ export default function Home() {
                 <p className="font-normal font-['Familjen_Grotesk',_sans-serif]">$199</p>
               </div>
               <div className="flex gap-[14px] items-center h-[32px]">
-                <div className="w-[32px] h-[24px] bg-red-500 rounded-sm"></div>
-                <div className="w-[32px] h-[24px] bg-green-500 rounded-sm"></div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <div className="absolute bottom-[-12.5%] left-0 right-0 top-[-12.5%]">
+                    <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/f4c56dcd721615763682c9c10c669fbf6a5204a7.svg" width={32} height={24} />
+                  </div>
+                </div>
+                <div className="h-[24px] relative shrink-0 w-[32px]">
+                  <Image alt="Color Swatch" className="block max-w-none size-full" src="http://localhost:3845/assets/c099d527307317b376afde556b152a92cfe2eb4b.svg" width={32} height={24} />
+                </div>
               </div>
           </div>
         </div>
 
           {/* Navigation Arrow Button */}
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-            <button className="bg-[#ecf6fe] p-[10px] rounded-[22px] shadow-[0px_1.5px_4px_0px_rgba(0,0,0,0.16)] hover:shadow-lg transition-shadow">
+            <button className="bg-white dark:bg-slate-800 p-[10px] rounded-[22px] transition-shadow">
               <svg className="w-5 h-5 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -236,24 +310,24 @@ export default function Home() {
         </section>
 
         {/* Product Grid Section */}
-        <section className="bg-[#ecf6fe] flex flex-col pb-[52px] pt-0 relative">
+        <section className="flex flex-col pb-[52px] pt-0 relative">
           {/* Filters */}
           <div className="flex flex-col gap-[32px] items-start justify-center px-0 py-[32px]">
             <div className="flex items-center justify-between w-full">
               <div className="flex gap-[14px] items-start">
-                <button className="bg-[#ecf6fe] border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
+                <button className="bg-white dark:bg-slate-800 border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
                   <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Category</span>
                   <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <button className="bg-[#ecf6fe] border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
+                <button className="bg-white dark:bg-slate-800 border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
                   <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Price</span>
                   <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <button className="bg-[#ecf6fe] border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
+                <button className="bg-white dark:bg-slate-800 border border-[#085791] rounded-[22px] px-[20px] py-[10px] flex items-center gap-[10px]">
                   <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Brand</span>
                   <svg className="w-4 h-4 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -440,7 +514,7 @@ export default function Home() {
               <button className="rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 transition-colors">
                 <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">5</span>
               </button>
-              <button className="bg-[#ecf6fe] rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+              <button className="bg-white dark:bg-slate-800 rounded-[22px] p-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors">
                 <svg className="w-5 h-5 text-[#164364]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -452,82 +526,70 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#ecf6fe] mt-24">
-        <div className="container mx-auto px-4 py-[52px]">
-          {/* Decorative Container Element */}
-          <div className="h-2 w-full mb-5 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-200 rounded-full"></div>
-          </div>
+      <footer className="mt-24 border-t border-[#164364]">
+        <div className="container mx-auto p-4 py-[52px]">
           
           {/* Footer Content */}
           <div className="flex flex-col lg:flex-row gap-[52px] items-start">
             {/* Logo and Social Icons */}
             <div className="flex flex-col gap-[14px]">
-              <div className="flex items-center">
-                <h2 className="text-[28px] font-extrabold text-[#164364] lowercase font-['Syne',_sans-serif]">
+              <div className="w-[380px] flex items-center h-[32px]">
+                <h2 className="text-[28px] font-extrabold text-[#164364] lowercase font-['Syne',_sans-serif] leading-none">
                   TechStore
                 </h2>
               </div>
-              <div className="flex gap-[14px] items-center">
-                <button className="w-6 h-6 text-[#164364] hover:text-blue-600 transition-colors">
-                  <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </button>
-                <button className="w-6 h-6 text-[#164364] hover:text-blue-600 transition-colors">
-                  <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
-                  </svg>
-                </button>
-                <button className="w-6 h-6 text-[#164364] hover:text-blue-600 transition-colors">
-                  <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </button>
+              <div className="flex gap-[14px] items-start">
+                <div className="w-6 h-6">
+                  <img alt="Facebook" className="w-full h-full" src="http://localhost:3845/assets/3123e78f99a5aef6eb82bff18f5e3897c1f396d5.svg" />
+                </div>
+                <div className="w-6 h-6">
+                  <img alt="Instagram" className="w-full h-full" src="http://localhost:3845/assets/436295d86bc50b05f015bca0f79678c9699f1386.svg" />
+                </div>
+                <div className="w-6 h-6">
+                  <img alt="Twitter" className="w-full h-full" src="http://localhost:3845/assets/98e9dcb877aab8a549ee94449f5d3b4a1999b394.svg" />
+                </div>
               </div>
             </div>
 
             {/* Company Links */}
             <div className="flex flex-col gap-[10px] w-[200px]">
-              <h3 className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Company</h3>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">About Us</button>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">Careers</button>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">Press</button>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">Investors</button>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Company</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">About Us</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Careers</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Press</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Investors</p>
             </div>
 
             {/* Support Links */}
             <div className="flex flex-col gap-[10px] w-[200px]">
-              <h3 className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif]">Support</h3>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">Contact Us</button>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">Warranty</button>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">FAQs</button>
-              <button className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] text-left hover:text-blue-600 transition-colors">Store Locator</button>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Support</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Contact Us</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Warranty</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">FAQs</p>
+              <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">Store Locator</p>
             </div>
 
             {/* Newsletter Section */}
             <div className="flex flex-col gap-[20px] w-full lg:w-[400px]">
               <div className="flex flex-col gap-[6px]">
-                <h3 className="text-[15px] font-semibold text-[#164364] font-['Familjen_Grotesk',_sans-serif]">
+                <p className="text-[15px] font-semibold text-[#164364] font-['Familjen_Grotesk',_sans-serif] leading-[20px]">
                   Subscribe to our newsletter
-                </h3>
-                <p className="text-[15px] font-normal text-[#164364] font-['Familjen_Grotesk',_sans-serif]">
+                </p>
+                <p className="text-[15px] font-normal text-[#164364] font-['Familjen_Grotesk',_sans-serif] leading-[20px]">
                   Stay updated with the latest tech news and offers.
                 </p>
               </div>
               <div className="flex gap-[14px] items-start">
                 <div className="flex-1 bg-[#fafdff] border border-[#495f6e] rounded-[22px] px-[14px] py-[10px]">
-                  <input 
-                    type="email" 
-                    placeholder="Email address"
-                    className="w-full bg-transparent text-[15px] text-[#164364] placeholder-[#164364] outline-none font-['Familjen_Grotesk',_sans-serif]"
-                  />
+                  <p className="text-[15px] font-normal text-[#164364] font-['Familjen_Grotesk',_sans-serif] leading-[20px]">
+                    Email address
+                  </p>
                 </div>
-                <button className="bg-transparent border border-[#0a578f] rounded-[22px] px-[20px] py-[10px] hover:bg-[#0a578f] hover:text-white transition-colors">
-                  <span className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] hover:text-white">
+                <div className="border border-[#0a578f] rounded-[22px] px-[20px] py-[10px] flex items-center justify-center">
+                  <p className="text-[15px] font-bold text-[#164364] font-['Space_Mono',_sans-serif] leading-[20px]">
                     Subscribe
-                  </span>
-                </button>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
