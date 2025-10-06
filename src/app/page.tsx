@@ -22,8 +22,7 @@ import {
 
 // Banner component based on Figma design
 function PromoBanner({ onClose }: { readonly onClose: () => void }) {
-  const imgCloseButton =
-    "http://localhost:3845/assets/a99194df1bf9a5f874bfe6d3c2dbdedbcb1235eb.svg";
+  const imgCloseButton = "/assets/icons/icon-close-button-primary.svg";
 
   return (
     <div
@@ -656,7 +655,7 @@ export default function Home() {
                     <Image
                       alt="Color Swatch"
                       className="block max-w-none size-full"
-                      src="http://localhost:3845/assets/f4c56dcd721615763682c9c10c669fbf6a5204a7.svg"
+                      src="/assets/icons/icon-color-swatch-gaming-laptop-1.svg"
                       width={32}
                       height={24}
                     />
@@ -666,7 +665,7 @@ export default function Home() {
                   <Image
                     alt="Color Swatch"
                     className="block max-w-none size-full"
-                    src="http://localhost:3845/assets/d40e5ac488ce7b2404fc4e3269b2b093351e3ee1.svg"
+                    src="/assets/icons/icon-color-swatch-gaming-laptop-2.svg"
                     width={32}
                     height={24}
                   />
@@ -699,7 +698,7 @@ export default function Home() {
                     <Image
                       alt="Color Swatch"
                       className="block max-w-none size-full"
-                      src="http://localhost:3845/assets/d9b4b9dbaa439b34da162e6d3601904013c7ff6c.svg"
+                      src="/assets/icons/icon-color-swatch-ultrabook-1.svg"
                       width={32}
                       height={24}
                     />
@@ -709,7 +708,7 @@ export default function Home() {
                   <Image
                     alt="Color Swatch"
                     className="block max-w-none size-full"
-                    src="http://localhost:3845/assets/7181ab2d81d3285e244abee8fdf87343f224c45f.svg"
+                    src="/assets/icons/icon-color-swatch-ultrabook-2.svg"
                     width={32}
                     height={24}
                   />
@@ -742,7 +741,7 @@ export default function Home() {
                     <Image
                       alt="Color Swatch"
                       className="block max-w-none size-full"
-                      src="http://localhost:3845/assets/16c2cd8e6fc25741f761992341e4cc081579d24f.svg"
+                      src="/assets/icons/icon-color-swatch-desktop-pc-1.svg"
                       width={32}
                       height={24}
                     />
@@ -752,7 +751,7 @@ export default function Home() {
                   <Image
                     alt="Color Swatch"
                     className="block max-w-none size-full"
-                    src="http://localhost:3845/assets/04fb35a29438ad73187923cfa6e535bbf4b160ef.svg"
+                    src="/assets/icons/icon-color-swatch-desktop-pc-2.svg"
                     width={32}
                     height={24}
                   />
@@ -785,7 +784,7 @@ export default function Home() {
                     <Image
                       alt="Color Swatch"
                       className="block max-w-none size-full"
-                      src="http://localhost:3845/assets/7f4c05d798c4e4f433234678fc74b6a657ba5b07.svg"
+                      src="/assets/icons/icon-color-swatch-tablet-1.svg"
                       width={32}
                       height={24}
                     />
@@ -795,7 +794,7 @@ export default function Home() {
                   <Image
                     alt="Color Swatch"
                     className="block max-w-none size-full"
-                    src="http://localhost:3845/assets/9c12aebf1caad966df25fe051241ae04ae331592.svg"
+                    src="/assets/icons/icon-color-swatch-tablet-2.svg"
                     width={32}
                     height={24}
                   />
@@ -828,7 +827,7 @@ export default function Home() {
                     <Image
                       alt="Color Swatch"
                       className="block max-w-none size-full"
-                      src="http://localhost:3845/assets/e2fac87601f7180ac425cab0246630725d75f5b6.svg"
+                      src="/assets/icons/icon-color-swatch-smartphone-1.svg"
                       width={32}
                       height={24}
                     />
@@ -838,7 +837,7 @@ export default function Home() {
                   <Image
                     alt="Color Swatch"
                     className="block max-w-none size-full"
-                    src="http://localhost:3845/assets/a1c6760c8fc9b6cab60675ae7c66604027695ecb.svg"
+                    src="/assets/icons/icon-color-swatch-smartphone-2.svg"
                     width={32}
                     height={24}
                   />
@@ -871,7 +870,7 @@ export default function Home() {
                     <Image
                       alt="Color Swatch"
                       className="block max-w-none size-full"
-                      src="http://localhost:3845/assets/f4c56dcd721615763682c9c10c669fbf6a5204a7.svg"
+                      src="/assets/icons/icon-color-swatch-smartwatch-1.svg"
                       width={32}
                       height={24}
                     />
@@ -881,7 +880,7 @@ export default function Home() {
                   <Image
                     alt="Color Swatch"
                     className="block max-w-none size-full"
-                    src="http://localhost:3845/assets/c099d527307317b376afde556b152a92cfe2eb4b.svg"
+                    src="/assets/icons/icon-color-swatch-smartwatch-2.svg"
                     width={32}
                     height={24}
                   />
@@ -1108,7 +1107,7 @@ export default function Home() {
                   <Image
                     alt="Facebook"
                     className="w-full h-full"
-                    src="http://localhost:3845/assets/3123e78f99a5aef6eb82bff18f5e3897c1f396d5.svg"
+                    src="/assets/icons/icon-facebook-primary.svg"
                     width={24}
                     height={24}
                   />
@@ -1117,7 +1116,7 @@ export default function Home() {
                   <Image
                     alt="Instagram"
                     className="w-full h-full"
-                    src="http://localhost:3845/assets/436295d86bc50b05f015bca0f79678c9699f1386.svg"
+                    src="/assets/icons/icon-instagram-primary.svg"
                     width={24}
                     height={24}
                   />
@@ -1126,7 +1125,7 @@ export default function Home() {
                   <Image
                     alt="Twitter"
                     className="w-full h-full"
-                    src="http://localhost:3845/assets/98e9dcb877aab8a549ee94449f5d3b4a1999b394.svg"
+                    src="/assets/icons/icon-twitter-primary.svg"
                     width={24}
                     height={24}
                   />

@@ -5,7 +5,9 @@ alwaysApply: true
 # Next.js + TypeScript + TailwindCSS + ShadCN/UI Project Rules
 
 ## Project Overview
+
 This is a Next.js project using:
+
 - Next.js 15+ with App Router
 - TypeScript for type safety
 - TailwindCSS for styling
@@ -15,6 +17,7 @@ This is a Next.js project using:
 ## Code Style & Best Practices
 
 ### TypeScript
+
 - Always use TypeScript with strict type checking
 - Define proper interfaces and types for all props and data structures
 - Use type inference where appropriate, explicit types where necessary
@@ -22,6 +25,7 @@ This is a Next.js project using:
 - Use proper generic types for reusable components
 
 ### Next.js App Router
+
 - Use App Router structure with `src/app/` directory
 - Implement proper page.tsx and layout.tsx files
 - Use Server Components by default, Client Components only when needed
@@ -30,6 +34,7 @@ This is a Next.js project using:
 - Implement proper loading.tsx and error.tsx files
 
 ### TailwindCSS
+
 - Use Tailwind utility classes for styling
 - Follow mobile-first responsive design approach
 - Use consistent spacing scale (4, 8, 12, 16, 24, 32, etc.)
@@ -38,19 +43,21 @@ This is a Next.js project using:
 - Group related classes logically (layout, spacing, colors, etc.)
 
 ### Styling Guidelines
+
 - **Component Styles**: Use Tailwind classes directly in components
 - **Global Styles**: Add custom styles in `src/app/globals.css` only
-- **Asset Organization**: 
+- **Asset Organization**:
   - Static assets (images, fonts) in `public/assets/`
   - Dynamic assets (processed images, icons) in `src/assets/`
   - Custom CSS files in `src/assets/styles/`
-- **CSS Architecture**: 
+- **CSS Architecture**:
   - Base styles in `globals.css`
   - Component-specific overrides in `globals.css` with clear comments
   - Avoid inline styles, use Tailwind classes
   - Use CSS custom properties for theming
 
 ### ShadCN/UI
+
 - Use ShadCN/UI components as the primary component library
 - Install new components with `npx shadcn@latest add [component-name]`
 - Customize components through CSS variables and Tailwind classes
@@ -58,6 +65,7 @@ This is a Next.js project using:
 - Use proper component composition
 
 ### File Structure
+
 ```
 src/
 ├── app/
@@ -79,13 +87,17 @@ src/
 public/
 ├── assets/
 │   ├── images/
-│   ├── icons/
+│   │   ├── screenshots/ (Figma UI sections)
+│   │   ├── graphics/ (Complex graphics, photos)
+│   │   └── backgrounds/ (Background images)
+│   ├── icons/ (SVG icons from Figma)
 │   ├── fonts/
 │   └── documents/
 └── favicon.ico
 ```
 
 ### Component Guidelines
+
 - Create reusable components in `src/components/`
 - Use proper prop interfaces with TypeScript
 - Implement proper error boundaries
@@ -94,6 +106,7 @@ public/
 - Use descriptive component and prop names
 
 ### Performance
+
 - Optimize images with Next.js Image component
 - Use dynamic imports for code splitting
 - Implement proper loading states
@@ -101,6 +114,7 @@ public/
 - Minimize bundle size with proper imports
 
 ### Accessibility
+
 - Use semantic HTML elements
 - Implement proper ARIA attributes
 - Ensure keyboard navigation works
@@ -108,14 +122,60 @@ public/
 - Test with screen readers
 
 ### Figma Integration
+
 - Use Figma MCP tools for design-to-code workflow
 - Extract design tokens and convert to Tailwind classes
 - Maintain design system consistency
 - Use Figma components as reference for ShadCN/UI customization
 
+### Figma Asset Extraction
+
+- **Always extract assets from Figma using MCP tools before implementing designs**
+- **Use `mcp_Figma_get_screenshot` for PNG exports of UI sections**
+- **Use `mcp_Figma_get_code` for SVG exports of icons and graphics**
+- **Extract node ID from Figma URLs**: `https://figma.com/design/:fileKey/:fileName?node-id=1-2` → nodeId: `1:2`
+
+#### Asset Organization & Naming
+
+- **Icons**: Save as SVG in `public/assets/icons/` with descriptive names
+  - Format: `icon-[purpose]-[variant].svg` (e.g., `icon-arrow-right-primary.svg`)
+  - Use kebab-case for all asset filenames
+- **Images**: Save as PNG in `public/assets/images/` with descriptive names
+  - Format: `[section]-[element]-[variant].png` (e.g., `hero-banner-desktop.png`)
+  - Include responsive variants: `-mobile`, `-tablet`, `-desktop` suffixes
+- **Screenshots**: Save UI sections as PNG in `public/assets/images/screenshots/`
+  - Format: `[page]-[section]-[state].png` (e.g., `home-hero-default.png`)
+
+#### Asset Extraction Workflow
+
+1. **Identify the Figma node** from the design link or current selection
+2. **Extract the node ID** from Figma URL or use currently selected node
+3. **Use appropriate MCP tool**:
+   - `mcp_Figma_get_screenshot` for UI sections, mockups, and complex graphics
+   - `mcp_Figma_get_code` for icons, logos, and simple graphics (SVG format)
+4. **Save with proper naming convention** in the correct directory
+5. **Update component imports** to reference the new asset paths
+6. **Verify asset quality** and optimize if needed
+
+#### Asset Quality Guidelines
+
+- **PNG exports**: Use for complex graphics, photos, and UI screenshots
+- **SVG exports**: Use for icons, logos, and simple graphics for scalability
+- **Resolution**: Export at 2x resolution for retina displays when possible
+- **File size**: Optimize assets to balance quality and performance
+- **Naming**: Use descriptive, semantic names that indicate purpose and context
+
+#### Integration with Next.js
+
+- **Static assets**: Place in `public/assets/` for direct URL access
+- **Dynamic assets**: Process through `src/assets/` if transformation is needed
+- **Next.js Image**: Use `next/image` component for optimized image loading
+- **Import paths**: Use absolute paths from `public/` directory
+
 ## Code Examples
 
 ### Component Structure
+
 ```typescript
 interface ComponentProps {
   title: string;
@@ -127,9 +187,7 @@ export function Component({ title, description, children }: ComponentProps) {
   return (
     <div className="flex flex-col space-y-4 p-6">
       <h2 className="text-2xl font-bold">{title}</h2>
-      {description && (
-        <p className="text-muted-foreground">{description}</p>
-      )}
+      {description && <p className="text-muted-foreground">{description}</p>}
       {children}
     </div>
   );
@@ -137,24 +195,65 @@ export function Component({ title, description, children }: ComponentProps) {
 ```
 
 ### Page Structure
+
 ```typescript
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Page Title',
-  description: 'Page description',
+  title: "Page Title",
+  description: "Page description",
 };
 
 export default function Page() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      {/* Page content */}
-    </main>
+    <main className="container mx-auto px-4 py-8">{/* Page content */}</main>
+  );
+}
+```
+
+### Figma Asset Extraction Example
+
+```typescript
+// 1. Extract node ID from Figma URL
+// URL: https://figma.com/design/abc123/MyDesign?node-id=1-2
+// Node ID: "1:2"
+
+// 2. Use MCP tools to extract assets
+// For UI sections/screenshots (PNG):
+// mcp_Figma_get_screenshot with nodeId: "1:2"
+
+// For icons/graphics (SVG):
+// mcp_Figma_get_code with nodeId: "1:2"
+
+// 3. Save assets with proper naming
+// Screenshot: public/assets/images/screenshots/home-hero-default.png
+// Icon: public/assets/icons/icon-arrow-right-primary.svg
+
+// 4. Use in components
+import Image from "next/image";
+
+export function HeroSection() {
+  return (
+    <div className="relative">
+      <Image
+        src="/assets/images/screenshots/home-hero-default.png"
+        alt="Hero section"
+        width={1200}
+        height={600}
+        priority
+      />
+      <img
+        src="/assets/icons/icon-arrow-right-primary.svg"
+        alt="Arrow right"
+        className="w-6 h-6"
+      />
+    </div>
   );
 }
 ```
 
 ## Commands
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
@@ -162,6 +261,7 @@ export default function Page() {
 - `npm run lint` - Run ESLint
 
 ## Notes
+
 - Always test components in different screen sizes
 - Use TypeScript strict mode
 - Follow Next.js 15+ best practices

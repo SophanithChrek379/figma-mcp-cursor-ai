@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Color Swatch">
+<circle id="color" cx="16" cy="15" r="11.5" fill="var(--fill-0, #124A86)" stroke="var(--stroke-0, #440A8F)"/>
+<circle id="selectionBorder" cx="16" cy="15" r="14.5" stroke="var(--stroke-0, #0F3E71)"/>
+</g>
+</svg>
