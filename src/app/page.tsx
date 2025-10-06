@@ -169,8 +169,7 @@ export default function Home() {
       price: 89,
       category: "Accessories",
       brand: "Gaming Pro",
-      image:
-        "https://images.unsplash.com/photo-1527864550417-7f91a4d4c8c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "/assets/images/products/product-computer-mouse.png",
       colors: [
         "f4c56dcd721615763682c9c10c669fbf6a5204a7",
         "d40e5ac488ce7b2404fc4e3269b2b093351e3ee1",
