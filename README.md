@@ -1,43 +1,34 @@
-# Figma MCP Cursor AI
+# TechStore - E-commerce Website
 
-A modern Next.js application with Figma MCP integration, built with TypeScript, TailwindCSS, and ShadCN/UI.
+A modern, responsive e-commerce website built with Next.js 15, TypeScript, TailwindCSS, and ShadCN/UI components.
 
-## 🚀 Tech Stack
+## 🚀 Features
 
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type-safe JavaScript
-- **TailwindCSS** - Utility-first CSS framework
-- **ShadCN/UI** - Beautiful, accessible component library
-- **Figma MCP** - Model Context Protocol for Figma integration
+- **Responsive Design**: Mobile-first approach with beautiful UI across all devices
+- **Product Catalog**: Comprehensive product grid with filtering and search
+- **Product Carousel**: Featured products showcase
+- **Advanced Filtering**: Filter by category, price range, and brand
+- **Search Functionality**: Real-time product search with modal interface
+- **Pagination**: Efficient product browsing with pagination controls
+- **Newsletter Subscription**: Email subscription with form validation
+- **Modern UI**: Clean, professional design with smooth animations
+- **TypeScript**: Full type safety throughout the application
+- **Performance Optimized**: Next.js 15 with App Router for optimal performance
 
-## 📁 Project Structure
+## 🛠️ Tech Stack
 
-```
-src/
-├── app/
-│   ├── globals.css          # Global styles
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Homepage
-├── components/
-│   └── ui/                  # ShadCN/UI components
-├── lib/
-│   └── utils.ts             # Utility functions
-└── types/
-    └── index.ts             # TypeScript type definitions
-```
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **UI Components**: ShadCN/UI
+- **Icons**: Custom SVG icons and Lucide React
+- **Deployment**: Vercel (recommended)
 
-## 🛠️ Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
+## 📦 Installation
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/SophanithChrek379/figma-mcp-cursor-ai.git
 cd figma-mcp-cursor-ai
 ```
 
@@ -46,64 +37,119 @@ cd figma-mcp-cursor-ai
 npm install
 ```
 
-3. Start the development server:
+3. Run the development server:
 ```bash
 npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🎨 Available Scripts
+## 🚀 Deployment
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npx shadcn@latest add [component]` - Add ShadCN component
+### Vercel (Recommended)
 
-## 🧩 Adding ShadCN/UI Components
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Vercel will automatically detect Next.js and deploy your app
+4. Your app will be available at `https://your-app-name.vercel.app`
 
-To add new ShadCN/UI components:
+### Manual Deployment
 
+1. Build the application:
 ```bash
-npx shadcn@latest add [component-name]
+npm run build
 ```
 
-Example:
+2. Start the production server:
 ```bash
-npx shadcn@latest add dialog
-npx shadcn@latest add input
-npx shadcn@latest add form
+npm start
 ```
 
-## 🎯 Features
+## 📁 Project Structure
 
-- ⚡ **Lightning Fast** - Built with Next.js 15 and App Router
-- 🔒 **Type Safe** - Full TypeScript support with strict type checking
-- 🎨 **Beautiful UI** - Styled with TailwindCSS and ShadCN/UI
-- 📱 **Responsive** - Mobile-first responsive design
-- 🌙 **Dark Mode** - Built-in dark mode support
-- ♿ **Accessible** - WCAG compliant components
-- 🔧 **Developer Experience** - Hot reload, TypeScript, ESLint
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and TailwindCSS
+│   ├── layout.tsx           # Root layout component
+│   └── page.tsx             # Home page with e-commerce features
+├── components/
+│   └── ui/                  # ShadCN/UI components
+├── assets/
+│   ├── icons/               # Custom SVG icons
+│   └── data/                # Static data and constants
+└── lib/
+    └── utils.ts             # Utility functions
+public/
+└── assets/
+    ├── icons/               # Public icon assets
+    └── images/              # Product images and graphics
+```
 
-## 📝 Cursor AI Rules
+## 🎨 Design System
 
-This project includes `.cursorrules` file with comprehensive guidelines for:
-- TypeScript best practices
-- Next.js App Router patterns
-- TailwindCSS usage
-- ShadCN/UI component guidelines
-- Performance optimization
-- Accessibility standards
+The project follows a consistent design system with:
+- **Color Palette**: Professional blue and gray tones
+- **Typography**: Multiple font families for different UI elements
+- **Spacing**: Consistent spacing scale using TailwindCSS
+- **Components**: Reusable UI components with ShadCN/UI
+- **Icons**: Custom SVG icons for consistent branding
+
+## 🔧 Customization
+
+### Adding New Products
+
+Edit the `allProducts` array in `src/app/page.tsx` to add new products:
+
+```typescript
+const allProducts = [
+  {
+    id: 13,
+    name: "New Product",
+    price: 299,
+    category: "Accessories",
+    brand: "NewBrand",
+    image: "/path/to/image.jpg",
+    colors: ["color1", "color2"],
+    description: "Product description"
+  }
+];
+```
+
+### Styling
+
+- Global styles: `src/app/globals.css`
+- Component styles: Use TailwindCSS classes
+- Custom CSS: Add to `globals.css` with proper comments
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🚀 Performance
+
+- Next.js 15 with App Router for optimal performance
+- Image optimization with Next.js Image component
+- Lazy loading for better initial page load
+- Responsive images for different screen sizes
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
+4. Submit a pull request
 
-## 📄 License
+## 📞 Support
 
-MIT License - see LICENSE file for details.
+For support or questions, please open an issue on GitHub or contact the development team.
+
+---
+
+Built with ❤️ using Next.js, TypeScript, and TailwindCSS
